@@ -42,12 +42,14 @@ export class User extends Model<User, UserCreationAttrs> {
     allowNull: false,
   })
   password: string;
+
   @ApiProperty({ example: 'true', description: 'User is banned' })
   @Column({
     type: DataType.BOOLEAN,
     defaultValue: false,
   })
   banned: boolean;
+
   @ApiProperty({ example: 'spam', description: 'The reason of ban' })
   @Column({ type: DataType.STRING, allowNull: true })
   banReason: string;
